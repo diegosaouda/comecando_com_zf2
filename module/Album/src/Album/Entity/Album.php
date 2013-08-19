@@ -6,7 +6,7 @@ use Doctrine\ORM\Mapping as ORM;
 
 /**
  * @ORM\Table(name="album")
- * @ORM\Entity(repositoryClass="Core\Entity\Repository\Album")
+ * @ORM\Entity(repositoryClass="Album\Entity\Repository\Album")
  */
 class Album
 {
