@@ -8,6 +8,10 @@ class AlbumController extends AbstractActionController
 {
     public function indexAction()
     {
+		$album = $this->getServiceLocator()->get('Album\Model\Album');
+        return new ViewModel(array(
+            'albums' => $album->fetchAll()
+        ));
     }
 
     public function addAction()
@@ -20,5 +24,5 @@ class AlbumController extends AbstractActionController
 
     public function deleteAction()
     {
-    }
+    }	
 }
