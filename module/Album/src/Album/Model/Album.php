@@ -35,6 +35,15 @@ class Album implements InputFilterAwareInterface
 	}
 	
 	/**
+	 * Retorna a entidade álbum
+	 * @return Album\Entity\Album
+	 */
+	public function getEntity()
+	{
+		return $this->albumEntity;
+	}
+	
+	/**
 	 * Retorna todos os albuns
 	 * @param array Lista de Albuns
 	 */
