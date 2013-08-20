@@ -18,21 +18,21 @@ class AlbumForm extends Form
             'name' => 'title',
             'type' => 'Text',
             'options' => array(
-                'label' => 'Title',
+                'label' => 'Titulo',
             ),
         ));
         $this->add(array(
             'name' => 'artist',
             'type' => 'Text',
             'options' => array(
-                'label' => 'Artist',
+                'label' => 'Artista',
             ),
         ));
         $this->add(array(
             'name' => 'submit',
             'type' => 'Submit',
             'attributes' => array(
-                'value' => 'Go',
+                'value' => 'Salvar',
                 'id' => 'submitbutton',
             ),
         ));

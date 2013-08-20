@@ -24,6 +24,11 @@ class Album implements InputFilterAwareInterface
 	 */
 	private $albumEntity;
 	
+	/**
+	 * @var InputFilterInterface
+	 */
+	private $inputFilter;
+	
 	public function __construct(EntityManager $em)
 	{
 		$this->em = $em;
