@@ -23,6 +23,12 @@ $this->headTitle($title);
             array('action'=>'edit', 'id' => $album->getId()));?>">Editar</a>
         <a class="btn btn-mini btn-danger" onclick="return confirm('Tem certeza que deseja deletar esse álbum?');" href="<?php echo $this->url('album',
             array('action'=>'delete', 'id' => $album->getId()));?>">Deletar</a>
+        
+        &nbsp;||&nbsp;
+        
+        <a class="btn btn-mini btn-info" href="<?php echo $this->url('album',
+            array('action'=>'music', 'id' => $album->getId()));?>">Músicas</a>
+        
     </td>
 </tr>
 <?php endforeach; ?>

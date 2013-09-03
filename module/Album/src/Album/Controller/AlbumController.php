@@ -80,5 +80,17 @@ class AlbumController extends AbstractActionController
 		$album->remove();
 		
 		return $this->redirect()->toRoute('album');
+    }
+
+    public function musicAction()
+    {
+        $id = (int) $this->params()->fromRoute('id', 0);
+        
+        $album = $this->getServiceLocator()->get('Album\Model\Album');
+		$album->loadEntityById($id);
+        
+        return new ViewModel(array(
+            'album' => $album->getEntity()    
+        ));
     }	
 }

@@ -3,6 +3,7 @@
 namespace Album\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Table(name="album")
@@ -33,6 +34,17 @@ class Album
 	 */
 	private $title;
 	
+	/**
+     * @ORM\OneToMany(targetEntity="Music", mappedBy="album")
+     */
+	private $musics;
+	
+	
+	public function __construct() 
+	{
+        $this->musics = new ArrayCollection();
+    }
+	
 	public function getId()
 	{
 		return $this->id;
@@ -56,6 +68,11 @@ class Album
 	public function getTitle()
 	{
 		return $this->title;
+	}
+	
+	public function getMusics()
+	{
+	    return $this->musics;
 	}
 	
 	/**

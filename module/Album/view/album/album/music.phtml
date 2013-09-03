@@ -1,0 +1,33 @@
+<?php 
+$title = 'Músicas: ' . $this->album->getTitle();
+$this->headTitle($title);
+
+$musicas = $this->album->getMusics();
+?>
+
+<h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<table class="table">
+    <tr>
+        <th>#</th>
+        <th>Nome</th>
+    </tr>
+
+    <?php if ($musicas->count() === 0): ?>
+        
+        <tr>
+            <td colspan="2">Não existem músicas cadastradas</td>
+        </tr>
+        
+    <?php else: ?>
+        <?php foreach ($musicas as $musica) : ?>
+        <tr>
+            <td>
+                <?php echo $musica->getId() ?>
+            </td>
+            <td><?php echo $this->escapeHtml($musica->getName());?></td>
+        </tr>
+        <?php endforeach; ?>
+    <?php endif; ?>
+
+</table>
