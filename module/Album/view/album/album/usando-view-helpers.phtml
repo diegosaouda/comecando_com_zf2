@@ -1,0 +1,10 @@
+<h1>Usando view helpers</h1>
+
+<ul>
+	<li><strong>CPF:</strong> <?php echo $this->cpf ?> <code><?php echo $this->formatCPF($this->cpf) ?></code></li>
+	<li><strong>Status:</strong> <?php echo $this->status; ?> <code><?php echo $this->showStatus($this->status) ?></code></li>
+	<li><strong>Mask 1:</strong> <?php echo $this->mask1; ?> <code><?php echo $this->mask('####-####', $this->mask1) ?></code></li>
+	<li><strong>Mask 2:</strong> <?php echo $this->mask2; ?> <code><?php echo $this->mask('##-##-##-##-##', $this->mask2) ?></code></li>
+	<li><strong>Mask 3:</strong> <?php echo $this->mask3; ?> <code><?php echo $this->mask('##|##.##@##&##', $this->mask3) ?></code></li>
+	<li><strong>Data:</strong> <?php echo $this->data->format('d/m/Y'); ?> <code><?php echo $this->formatDate($this->data) ?></code></li>
+</ul>

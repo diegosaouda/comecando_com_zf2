@@ -35,4 +35,31 @@ class Module
         );
     }
 	
+	public function getViewHelperConfig() 
+	{
+		return array(
+			'factories' => array(
+				
+				'formatDate' => function($sm) {
+					//en_US
+					//de-DE
+					//fr_FR
+					//pt_BR
+					
+					\Locale::setDefault('pt_BR');
+					
+					$locale = \Locale::getDefault();
+					
+					return new View\Helper\FormatDate($locale);
+                },
+				
+			),
+			'invokables' => array(
+				'formatCPF'  => new View\Helper\FormatCPF(),
+				'showStatus' => new View\Helper\ShowStatus(),
+				'mask' => new View\Helper\Mask()
+			),
+		);
+	}
+	
 }

@@ -93,4 +93,20 @@ class AlbumController extends AbstractActionController
             'album' => $album->getEntity()    
         ));
     }	
+	
+	public function usandoViewHelpersAction()
+	{
+	
+		$variaveis = array(
+			'data' => new \DateTime(),
+			'cpf' => '11122233305',
+			'status' => 1,
+			'mask1'	=> '22223333',
+			'mask2' => 'AF760909BC',
+			'mask3' => '5432543254'
+		);
+		
+		return new ViewModel($variaveis);
+	}
+	
 }
